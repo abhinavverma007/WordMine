@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+    background: #0f172a;
+    color: #e5e7eb;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 4px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    max-width: 320px;
+    margin: 20px auto;
+}
+
+.tile {
+    background: #334155;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tile.safe {
+    background: #16a34a;
+}
+
+.tile.hint {
+    background: #ca8a04;
+}
+
+.tile.mine {
+    background: #dc2626;
+}
+
+.letters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.slot {
+    width: 40px;
+    height: 40px;
+    border-bottom: 2px solid #94a3b8;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#message {
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+.retry-btn {
+    margin-top: 16px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+    display: none;
+
+    box-shadow:
+        0 10px 20px rgba(59, 130, 246, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        opacity 0.15s ease;
+}
+
+/* Hover (desktop) */
+.retry-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 28px rgba(59, 130, 246, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Active (click) */
+.retry-btn:active {
+    transform: translateY(0);
+    box-shadow:
+        0 6px 14px rgba(59, 130, 246, 0.35),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus (accessibility) */
+.retry-btn:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.4),
+        0 10px 20px rgba(59, 130, 246, 0.35);
+}
+
+.tile.wrong {
+    position: relative;
+    background: red;
+    /* muted */
+    color: #cbd5e1;
+}
+
+.tile.wrong {
+    animation: shake 0.3s ease;
+}
+
+.tile.correct {
+  background: black;
+  color: #fff;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ---------- BODY ---------- */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: #e5e7eb;
+}
+
+/* ---------- APP CONTAINER ---------- */
+main {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 12px 20px 24px;
+  text-align: center;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: sticky;
+  top: 0;
+  padding: 18px 0 12px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 6, 23, 0.95),
+    rgba(2, 6, 23, 0.75),
+    rgba(2, 6, 23, 0)
+  );
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+
+header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #facc15, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ---------- STATUS ---------- */
+.status {
+  margin: 14px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbd5f5;
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* ---------- TILE ---------- */
+.tile {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #334155, #1e293b);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  font-size: 22px;
+  font-weight: 800;
+  color: #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- TILE STATES ---------- */
+.tile.safe {
+  background: linear-gradient(145deg, #22c55e, #15803d);
+  color: #052e16;
+}
+
+.tile.correct {
+  background: linear-gradient(145deg, #92400e, #78350f); /* brown */
+  color: #fff;
+}
+
+.tile.hint {
+  background: linear-gradient(145deg, #facc15, #ca8a04);
+  color: #422006;
+}
+
+.tile.mine {
+  background: linear-gradient(145deg, #ef4444, #991b1b);
+  color: #fff;
+}
+
+.tile.wrong {
+  position: relative;
+  background: #475569;
+  color: #cbd5e1;
+}
+
+.tile.wrong::after {
+  content: "✖";
+  position: absolute;
+  font-size: 32px;
+  font-weight: 900;
+  color: rgba(239, 68, 68, 0.9);
+}
+
+/* ---------- LETTER SLOTS ---------- */
+.letters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0 6px;
+}
+
+.slot {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #0f172a;
+  border: 2px solid #334155;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- MESSAGE ---------- */
+#message {
+  min-height: 24px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fbbf24;
+}
+
+/* ---------- RETRY BUTTON ---------- */
+.retry-btn {
+  margin-top: 14px;
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+
+  cursor: pointer;
+  box-shadow:
+    0 10px 20px rgba(59, 130, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(59, 130, 246, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+}

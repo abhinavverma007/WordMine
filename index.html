@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GridWord</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>WordMine</h1>
+    <p>Think before you tap.</p>
+  </header>
+
+  <main>
+    <div class="status">
+      <span id="moves">Moves: 6</span>
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <div class="letters">
+      <span class="slot">_</span>
+      <span class="slot">_</span>
+      <span class="slot">_</span>
+      <span class="slot">_</span>
+    </div>
+
+    <p id="message"></p>
+    <button id="retryBtn" class="retry-btn" style="display:none;">Try Again</button>
+
+  </main>
+  <script src="game.js" defer></script>
+</body>
+</html>
