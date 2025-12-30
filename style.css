@@ -1,131 +1,131 @@
 * {
-    box-sizing: border-box;
-    font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 16px;
-    background: #0f172a;
-    color: #e5e7eb;
-    text-align: center;
+  margin: 0;
+  padding: 16px;
+  background: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
 }
 
 header h1 {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    max-width: 320px;
-    margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  max-width: 320px;
+  margin: 20px auto;
 }
 
 .tile {
-    background: #334155;
-    aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
+  background: #334155;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .tile.safe {
-    background: #16a34a;
+  background: #16a34a;
 }
 
 .tile.hint {
-    background: #ca8a04;
+  background: #ca8a04;
 }
 
 .tile.mine {
-    background: #dc2626;
+  background: #dc2626;
 }
 
 .letters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .slot {
-    width: 40px;
-    height: 40px;
-    border-bottom: 2px solid #94a3b8;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-bottom: 2px solid #94a3b8;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #message {
-    margin-top: 12px;
-    min-height: 20px;
+  margin-top: 12px;
+  min-height: 20px;
 }
 
 .retry-btn {
-    margin-top: 16px;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
+  margin-top: 16px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
 
-    background: linear-gradient(135deg, #6366f1, #3b82f6);
-    border: none;
-    border-radius: 999px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  border: none;
+  border-radius: 999px;
 
-    cursor: pointer;
-    display: none;
+  cursor: pointer;
+  display: none;
 
-    box-shadow:
-        0 10px 20px rgba(59, 130, 246, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 10px 20px rgba(59, 130, 246, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        opacity 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
 }
 
 /* Hover (desktop) */
 .retry-btn:hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 14px 28px rgba(59, 130, 246, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 28px rgba(59, 130, 246, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 /* Active (click) */
 .retry-btn:active {
-    transform: translateY(0);
-    box-shadow:
-        0 6px 14px rgba(59, 130, 246, 0.35),
-        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  box-shadow:
+    0 6px 14px rgba(59, 130, 246, 0.35),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Focus (accessibility) */
 .retry-btn:focus {
-    outline: none;
-    box-shadow:
-        0 0 0 3px rgba(99, 102, 241, 0.4),
-        0 10px 20px rgba(59, 130, 246, 0.35);
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.4),
+    0 10px 20px rgba(59, 130, 246, 0.35);
 }
 
 .tile.wrong {
-    position: relative;
-    background: red;
-    /* muted */
-    color: #cbd5e1;
+  position: relative;
+  background: red;
+  /* muted */
+  color: #cbd5e1;
 }
 
 .tile.wrong {
-    animation: shake 0.3s ease;
+  animation: shake 0.3s ease;
 }
 
 .tile.correct {
@@ -134,25 +134,25 @@ header h1 {
 }
 
 @keyframes shake {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    25% {
-        transform: translateX(-2px);
-    }
+  25% {
+    transform: translateX(-2px);
+  }
 
-    50% {
-        transform: translateX(2px);
-    }
+  50% {
+    transform: translateX(2px);
+  }
 
-    75% {
-        transform: translateX(-2px);
-    }
+  75% {
+    transform: translateX(-2px);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 
@@ -186,12 +186,10 @@ header {
   top: 0;
   padding: 18px 0 12px;
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(2, 6, 23, 0.95),
-    rgba(2, 6, 23, 0.75),
-    rgba(2, 6, 23, 0)
-  );
+  background: linear-gradient(to bottom,
+      rgba(2, 6, 23, 0.95),
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0));
   backdrop-filter: blur(6px);
   z-index: 10;
 }
@@ -265,7 +263,8 @@ header p {
 }
 
 .tile.correct {
-  background: linear-gradient(145deg, #92400e, #78350f); /* brown */
+  background: linear-gradient(145deg, #92400e, #78350f);
+  /* brown */
   color: #fff;
 }
 
@@ -443,8 +442,56 @@ header p {
     opacity: 0;
     transform: scale(0.92) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+.footer {
+  margin-top: 24px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.footer a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .heart {
+  display: inline-block;
+  margin: 0 2px;
+  animation: heartbeat 1.6s infinite;
+}
+
+/* subtle heartbeat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.15);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
