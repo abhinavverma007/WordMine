@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GridWord</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GridWord</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WordMine</h1>
+      <p>Think before you tap.</p>
+    </header>
 
-  <header>
-    <h1>WordMine</h1>
-    <p>Think before you tap.</p>
-  </header>
+    <main>
+      <div class="status">
+        <span id="moves">Moves: 6</span>
+      </div>
 
-  <main>
-    <div class="status">
-      <span id="moves">Moves: 6</span>
+      <div id="grid" class="grid"></div>
+
+      <div class="letters">
+        <span class="slot">_</span>
+        <span class="slot">_</span>
+        <span class="slot">_</span>
+        <span class="slot">_</span>
+      </div>
+
+      <p id="message"></p>
+      <button id="retryBtn" class="retry-btn" style="display: none">
+        Try Again
+      </button>
+    </main>
+    <!-- How To Play Button -->
+    <button id="howToPlayBtn" class="how-btn">How to Play</button>
+
+    <!-- How To Play Modal -->
+    <div id="howModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+
+      <div class="modal-content">
+        <h2>How to Play</h2>
+
+        <ul>
+          <li>🔲 Tap a tile to reveal a letter</li>
+          <li>💣 Avoid bombs — one click ends the game</li>
+          <li>🟨 Yellow tiles hint nearby word letters</li>
+          <li>❌ Cross means letter is not in the word</li>
+          <li>🟫 Brown tile = correct letter found</li>
+          <li>⏳ Complete the word before total moves finish </li>
+          <li>🎯 Find all 4 letters to win</li>
+        </ul>
+
+        <button id="closeModalBtn" class="close-btn">Got it 👍</button>
+      </div>
     </div>
 
-    <div id="grid" class="grid"></div>
-
-    <div class="letters">
-      <span class="slot">_</span>
-      <span class="slot">_</span>
-      <span class="slot">_</span>
-      <span class="slot">_</span>
-    </div>
-
-    <p id="message"></p>
-    <button id="retryBtn" class="retry-btn" style="display:none;">Try Again</button>
-
-  </main>
-  <script src="game.js" defer></script>
-</body>
+    <script src="game.js" defer></script>
+  </body>
 </html>

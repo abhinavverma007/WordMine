@@ -357,3 +357,94 @@ header p {
 .retry-btn:active {
   transform: translateY(0);
 }
+
+
+/* ---------- HOW TO PLAY BUTTON ---------- */
+.how-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ---------- MODAL ---------- */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+/* backdrop */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* content */
+.modal-content {
+  position: relative;
+  max-width: 300px;
+  margin: 12vh auto;
+  background: linear-gradient(145deg, #020617, #0f172a);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: left;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: modalPop 0.25s ease-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #facc15;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.modal-content li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* close button */
+.close-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  cursor: pointer;
+}
+
+/* animation */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

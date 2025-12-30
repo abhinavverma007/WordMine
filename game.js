@@ -81,7 +81,6 @@ async function initGame() {
   });
 
   SECRET_WORD = pickRandomWord();
-  console.log("Word of the day:", SECRET_WORD);
 
   generateGrid(today);
   renderGrid();
@@ -132,8 +131,6 @@ function generateGrid(today) {
   hintCandidates.filter(h => !h.isWord).slice(0, 4).forEach((t) => {
     t.type = "HINT";
   });
-  const t = tiles.filter(t => t.type === "HINT");
-  console.log("T:", t); 
 
 }
 
@@ -279,5 +276,24 @@ retryBtn.onclick = () => {
   initGame();
 };
 
+const howBtn = document.getElementById("howToPlayBtn");
+const modal = document.getElementById("howModal");
+const closeBtn = document.getElementById("closeModalBtn");
+
+howBtn.onclick = () => {
+  modal.classList.remove("hidden");
+};
+
+closeBtn.onclick = () => {
+  modal.classList.add("hidden");
+};
+
+// close on backdrop click
+modal.querySelector(".modal-backdrop").onclick = () => {
+  modal.classList.add("hidden");
+};
+
+
 // -------------------- START --------------------
 initGame();
+
